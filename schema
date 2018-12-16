@@ -1,0 +1,8 @@
+from django.db import models
+from shared.models import BaseModel
+{% for model, fields in data.items() %}
+
+class {{model}}(BaseModel):{% for field in fields %}
+    {{ field.to_string() }}{% endfor %}{% endfor %}
+
+

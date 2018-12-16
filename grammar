@@ -1,0 +1,67 @@
+/*
+
+Class name is CamelCase which ends with '::'
+field description:
+	field_name: field_type [Optional parameters] 
+
+Variant::
+    is_master : bool
+    sku: char(255)
+    desc: char(255) default='Empty' null=false
+    price: int default=10 null=false
+	product: fk	on_delede=models.PROTECT
+	category: m2m
+
+supported field types:
+
+bool
+char
+date
+datetime
+decimal
+duration
+email
+float
+int
+slug
+text
+time
+url
+uuid
+
+Cases 
+Variant::
+    is_master : bool
+    track_inventory : bool(255 'this')
+    is_master : bool  n='2'
+
+Product::
+    is_master : bool
+    track_inventory : bool
+    sku : char max_length=255
+    position : int(244, 'this' cool)  a=none b=false c=true 
+
+Other::
+    sku : char max_length=255
+    is_master : bool
+    track_inventory : bool
+    weight: decimal  max_digits=8 m=8.0
+    product_id: fk null=false on_delete=models.PROTECT 
+*/
+
+
+
+Author::
+    name: char max_length=222
+    age: int
+
+Genre::
+    name: char(222)
+
+BlogPost::
+    title: char(255)
+    desc: text max_length=1000 
+    published: bool
+    genres: m2m('Genre')
+    author: fk
+
